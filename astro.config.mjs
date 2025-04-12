@@ -9,8 +9,9 @@ export default defineConfig({
     starlight({
       title: "Bad Robots",
       logo: {
-        src: "./public/logo.jpeg",
+        src: "./public/favicon.jpeg",
       },
+      favicon: "./public/favicon.jpeg",
       editLink: {
         baseUrl:
           // The base link to edit documentation
@@ -29,6 +30,7 @@ export default defineConfig({
           items: [
             // Each item here is one entry in the navigation menu.
             { label: "Introduction", slug: "introduction" },
+            { label: "Competition", slug: "competition" },
           ],
         },
         {
