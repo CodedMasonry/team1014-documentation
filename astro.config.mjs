@@ -30,16 +30,34 @@ export default defineConfig({
           items: [
             // Each item here is one entry in the navigation menu.
             { label: "Introduction", slug: "introduction" },
-            { label: "Competition", slug: "competition" },
+            "resources",
+            "competition",
+            "terms",
           ],
         },
         {
-          label: "Guides",
-          autogenerate: { directory: "guides" },
+          label: "Mechanical",
+          items: [
+            "mechanical/intro",
+            {
+              label: "Guides",
+              autogenerate: { directory: "mechanical/guides" },
+            },
+          ],
         },
         {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "Programming",
+          items: [
+            "programming/intro",
+            {
+              label: "Guides",
+              autogenerate: { directory: "programming/guides" },
+            },
+            {
+              label: "Reference",
+              autogenerate: { directory: "programming/reference" },
+            },
+          ],
         },
       ],
     }),
