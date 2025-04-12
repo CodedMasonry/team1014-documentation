@@ -1,26 +1,45 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'Team 1014',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/BadRobots1014' }],
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
-		}),
-	],
+  site: "https://1014.brockshaffer.dev",
+  integrations: [
+    starlight({
+      title: "Bad Robots",
+      logo: {
+        src: "./public/logo.jpeg",
+      },
+      editLink: {
+        baseUrl:
+          // The base link to edit documentation
+          "https://github.com/CodedMasonry/team1014-documentation/edit/main/src/content/docs/",
+      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/BadRobots1014",
+        },
+      ],
+      sidebar: [
+        {
+          label: "Start Here",
+          items: [
+            // Each item here is one entry in the navigation menu.
+            { label: "Introduction", slug: "introduction" },
+          ],
+        },
+        {
+          label: "Guides",
+          autogenerate: { directory: "guides" },
+        },
+        {
+          label: "Reference",
+          autogenerate: { directory: "reference" },
+        },
+      ],
+    }),
+  ],
 });
