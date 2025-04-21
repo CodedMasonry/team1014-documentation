@@ -11,7 +11,7 @@ export default defineConfig({
       logo: {
         src: "./public/favicon.jpeg",
       },
-      favicon: "./public/favicon.jpeg",
+      favicon: "/favicon.jpeg",
       editLink: {
         baseUrl:
           // The base link to edit documentation
@@ -31,12 +31,13 @@ export default defineConfig({
             // Each item here is one entry in the navigation menu.
             { label: "Introduction", slug: "introduction" },
             "resources",
-            "competition",
             "terms",
+            "competition",
           ],
         },
         {
           label: "Mechanical",
+          collapsed: true,
           items: [
             "mechanical/intro",
             {
@@ -45,8 +46,21 @@ export default defineConfig({
             },
           ],
         },
+
+        {
+          label: "Electrical",
+          collapsed: true,
+          items: [
+            "electrical/intro",
+            {
+              label: "Guides",
+              autogenerate: { directory: "eletrical/guides" },
+            },
+          ],
+        },
         {
           label: "Programming",
+          collapsed: true,
           items: [
             "programming/intro",
             {
